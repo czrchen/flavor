@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wave from "../components/Wave.astro";
+
+const applications = [
+  { img: "/images/banners/bakery.jpg", name: "Bakery & Confectionery", desc: "Cakes, breads, biscuits, chocolate and sugar confectionery." },
+  { img: "/images/banners/beverage.jpg", name: "Beverage & Cordial", desc: "Cordials, juices, carbonated and instant drinks." },
+  { img: "/images/banners/dairy.jpg", name: "Dairy Products", desc: "Ice cream, yoghurt, cultured and milk-based products." },
+  { img: "/images/banners/oil.jpg", name: "Oil & Fats", desc: "Margarine, shortening, ghee and edible oil blends." },
+  { img: "/images/banners/savory.jpg", name: "Savory & Snack", desc: "Seasonings, coatings and savoury snack flavours." },
+];
+
+const certs = [
+  { img: "/images/certs/fssc.webp", name: "FSSC 22000" },
+  { img: "/images/certs/iso22000.webp", name: "ISO 22000" },
+  { img: "/images/certs/haccp.webp", name: "HACCP" },
+  { img: "/images/certs/good-manufacturing.webp", name: "GMP" },
+  { img: "/images/certs/halal.webp", name: "Halal" },
+  { img: "/images/certs/food-safety.webp", name: "Food Safety" },
+];
+
+const quality = [
+  { k: "20+ years of expertise", v: "Two decades formulating flavours for Malaysia's F&B industry." },
+  { k: "Food-safety certified", v: "FSSC 22000, ISO 22000, HACCP, GMP and Halal-certified production." },
+  { k: "Liquid, powder & paste", v: "Custom flavour systems matched to your process and product." },
+];
+---
+
+<Layout path="/">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy" data-hero-stagger>
+        <span class="eyebrow">Flavour Manufacturer · Selangor, Malaysia</span>
+        <h1>Make your food <span class="accent">more flavorful</span>.</h1>
+        <p class="hero-lead">
+          CA Flavor gives life to foods. We develop and manufacture consistent, great-tasting
+          food flavours for the F&B industry — from bakery and beverages to dairy, oils and
+          savoury snacks.
+        </p>
+        <div class="hero-actions">
+          <a href="/products" class="btn btn-primary">Our applications
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="/contact" class="btn btn-ghost">Request a sample</a>
+        </div>
+        <p class="hero-trust">Over <strong>20 years</strong> of flavour manufacturing · <strong>FSSC 22000</strong> certified.</p>
+      </div>
+
+      <div class="hero-art" data-hero-art>
+        <div class="hero-img-main">
+          <img src="/images/bg-home.jpg" alt="CA Flavor — food flavours" width="620" height="520" />
+        </div>
+        <figure class="hero-float">
+          <img src="/images/banners/beverage.jpg" alt="Beverage flavours" width="280" height="200" />
+          <figcaption>From recipe to scale-up</figcaption>
+        </figure>
+        <div class="hero-badge">
+          <span>Since<br><strong>1999</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Bakery</span><i></i><span>Beverage</span><i></i><span>Dairy</span><i></i>
+      <span>Oil &amp; Fats</span><i></i><span>Savoury Snacks</span><i></i><span>Essences</span><i></i>
+      <span>Bakery</span><i></i><span>Beverage</span><i></i><span>Dairy</span><i></i>
+      <span>Oil &amp; Fats</span><i></i><span>Savoury Snacks</span><i></i><span>Essences</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============ APPLICATIONS ============ -->
+  <section class="apps-sec">
+    <div class="container">
+      <header class="sec-head row" data-reveal>
+        <div>
+          <span class="eyebrow">Applications</span>
+          <h2 class="section-title">Where our flavours go</h2>
+        </div>
+        <p class="section-lead">Flavour systems engineered for every corner of the food &amp; beverage industry.</p>
+      </header>
+
+      <div class="app-grid" data-reveal-group>
+        {applications.map((a) => (
+          <a href="/products" class="app-card">
+            <div class="app-media"><img src={a.img} alt={a.name} loading="lazy" /></div>
+            <div class="app-body">
+              <h3>{a.name}</h3>
+              <p>{a.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY ============ -->
+  <section class="quality">
+    <div class="container quality-grid">
+      <div class="quality-media" data-reveal>
+        <div class="quality-frame">
+          <img src="/images/banners/bakery.jpg" alt="CA Flavor production" width="560" height="600" loading="lazy" data-parallax="-26" />
+        </div>
+        <div class="quality-stat" data-parallax="22">
+          <span class="num"><span data-count="20">0</span>+</span>
+          <span class="lbl">years giving life<br>to foods</span>
+        </div>
+      </div>
+      <div class="quality-copy" data-reveal>
+        <span class="eyebrow">Why CA Flavor</span>
+        <h2 class="section-title">A flavour partner you can build on</h2>
+        <p class="section-lead">From our facility in Bandar Bukit Puchong, Selangor, we pair state-of-the-art technology with two decades of know-how to deliver flavours that perform — batch after batch.</p>
+        <ul class="quality-list">
+          {quality.map((q) => (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <div><strong>{q.k}</strong><span>{q.v}</span></div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="certs ribbon ribbon-cream">
+    <Wave side="top" />
+    <Wave side="bottom" />
+    <div class="ribbon-inner">
+      <div class="container">
+        <span class="eyebrow center certs-eyebrow">Accreditations</span>
+      </div>
+      <div class="cert-belt">
+        <div class="cert-belt-track">
+          {[...certs, ...certs, ...certs].map((c) => (
+            <div class="cert-plate"><img src={c.img} alt={c.name} loading="lazy" /></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta ribbon">
+    <Wave side="top" />
+    <Wave side="bottom" />
+    <div class="container ribbon-inner">
+      <div class="cta-box" data-reveal>
+        <div class="cta-copy">
+          <h2>Let's develop your next flavour.</h2>
+          <p>Tell us your product and target profile — our team in Puchong will formulate, sample and scale it with you.</p>
+        </div>
+        <a href="/contact" class="btn btn-primary">Get in touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .accent { color: var(--red); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 72px 0 90px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero-copy h1 { font-size: clamp(2.9rem, 6vw, 4.6rem); margin: 22px 0 22px; letter-spacing: -0.04em; }
+  .hero-lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 510px; line-height: 1.65; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0 26px; }
+  .hero-trust { font-size: .95rem; color: var(--ink-soft); }
+  .hero-trust strong { color: var(--ink); font-weight: 700; }
+
+  .hero-art { position: relative; }
+  .hero-img-main { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 6 / 5; }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-float { position: absolute; left: -28px; bottom: -28px; width: 230px; background: #fff; border-radius: 16px; padding: 10px; box-shadow: var(--shadow-md); }
+  .hero-float img { width: 100%; border-radius: 9px; aspect-ratio: 7/5; object-fit: cover; }
+  .hero-float figcaption { font-size: .76rem; font-weight: 600; color: var(--ink-soft); padding: 8px 4px 4px; }
+  .hero-badge { position: absolute; top: -22px; right: -18px; display: flex; align-items: center; gap: 10px; background: var(--red); color: #fff; padding: 12px 18px; border-radius: 14px; box-shadow: var(--shadow-md); }
+  .hero-badge span { font-family: var(--font-display); font-size: .72rem; line-height: 1.1; letter-spacing: .04em; }
+  .hero-badge strong { font-size: 1.15rem; }
+
+  /* ---------- TICKER ---------- */
+  .ticker { background: var(--navy); overflow: hidden; padding: 15px 0; }
+  .ticker-track { display: flex; align-items: center; gap: 28px; white-space: nowrap; width: max-content; animation: scroll 30s linear infinite; }
+  .ticker-track span { font-family: var(--font-display); font-weight: 600; font-size: .92rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.92); }
+  .ticker-track i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* ---------- shared section header ---------- */
+  .apps-sec { padding: 100px 0 0; }
+  .sec-head { margin-bottom: 48px; }
+  .sec-head.row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+
+  /* ---------- APPLICATIONS ---------- */
+  .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .app-card { display: block; }
+  .app-media {
+    overflow: hidden; border-radius: 22px; box-shadow: 0 0 0 rgba(20,32,43,0);
+    transition: transform .4s cubic-bezier(.2,.8,.25,1), box-shadow .4s ease;
+  }
+  .app-media img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.25,1); }
+  .app-card:hover .app-media { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+  .app-card:hover .app-media img { transform: scale(1.06); }
+  .app-body { padding: 18px 6px 0; }
+  .app-body h3 { font-size: 1.2rem; margin-bottom: 6px; letter-spacing: -0.02em; transition: color .25s ease; }
+  .app-card:hover .app-body h3 { color: var(--red); }
+  .app-body p { color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+
+  /* ---------- WHY ---------- */
+  .quality { padding: 110px 0 0; }
+  .quality-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+  .quality-media { position: relative; }
+  .quality-frame { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 14/15; box-shadow: var(--shadow-md); }
+  .quality-frame img { width: 100%; height: 114%; object-fit: cover; object-position: center; }
+  .quality-stat { position: absolute; right: -22px; bottom: 32px; z-index: 2; background: var(--red); color: #fff; border-radius: 16px; padding: 18px 22px; box-shadow: 0 18px 40px rgba(0,149,235,.3); display: flex; align-items: center; gap: 12px; }
+  .quality-stat .num { font-family: var(--font-display); font-weight: 700; font-size: 2.4rem; line-height: 1; }
+  .quality-stat .lbl { font-size: .82rem; line-height: 1.25; opacity: .95; }
+  .quality-copy .section-title { font-size: clamp(1.8rem, 3.6vw, 2.7rem); }
+  .quality-list { margin-top: 28px; display: grid; gap: 16px; }
+  .quality-list li { display: flex; gap: 14px; align-items: flex-start; }
+  .quality-list svg { width: 22px; height: 22px; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+  .quality-list strong { display: block; font-family: var(--font-display); font-size: 1.02rem; margin-bottom: 2px; }
+  .quality-list span { color: var(--ink-soft); font-size: .96rem; }
+
+  /* ---------- CERTIFICATIONS (conveyor belt) ---------- */
+  .certs-eyebrow { display: flex; justify-content: center; margin-bottom: 40px; }
+  .cert-belt {
+    overflow: hidden; padding: 26px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  }
+  .cert-belt-track { display: flex; gap: 26px; width: max-content; animation: beltScroll 28s linear infinite; }
+  .cert-belt:hover .cert-belt-track { animation-play-state: paused; }
+  .cert-plate {
+    flex: 0 0 auto; width: 172px; height: 124px; background: #fff; border-radius: 20px;
+    box-shadow: var(--shadow-sm); display: grid; place-items: center; padding: 24px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .cert-plate:hover { transform: translateY(-7px); box-shadow: 0 14px 28px rgba(20,32,43,.14); }
+  .cert-plate img { max-height: 72px; max-width: 100%; width: auto; object-fit: contain; }
+  @keyframes beltScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .cert-belt-track { animation: none; justify-content: center; } }
+
+  /* ---------- CTA ---------- */
+  .cta-box { display: flex; justify-content: space-between; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .cta-box h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.7rem); margin-bottom: 12px; }
+  .cta-box p { color: rgba(255,255,255,.8); max-width: 460px; }
+  .cta-box .btn { flex-shrink: 0; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 70px; }
+    .hero-art { max-width: 520px; }
+    .quality-grid { grid-template-columns: 1fr; gap: 40px; }
+    .quality-media { max-width: 460px; }
+    .app-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .app-grid { grid-template-columns: 1fr; }
+  }
+</style>

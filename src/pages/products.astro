@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Wave from "../components/Wave.astro";
+
+const applications = [
+  {
+    img: "/images/banners/bakery.jpg",
+    name: "Bakery & Confectionery",
+    desc: "Warm, true-to-life flavours that survive the oven and the mould.",
+    items: ["Butter & Milk", "Vanilla & Custard", "Pandan & Coconut", "Chocolate & Cocoa", "Fruit & Cream"],
+  },
+  {
+    img: "/images/banners/beverage.jpg",
+    name: "Beverage & Cordial",
+    desc: "Bright, clean profiles for cordials, juices and instant drinks.",
+    items: ["Orange & Citrus", "Blackcurrant", "Lychee & Rose", "Cola & Sarsi", "Coffee & Milk Tea"],
+  },
+  {
+    img: "/images/banners/dairy.jpg",
+    name: "Dairy Products",
+    desc: "Rich, rounded dairy notes for ice cream, yoghurt and cultured drinks.",
+    items: ["Milk & Cream", "Strawberry", "Mango & Durian", "Yoghurt", "Cheese"],
+  },
+  {
+    img: "/images/banners/oil.jpg",
+    name: "Oil & Fats",
+    desc: "Heat-stable flavours for margarine, shortening, ghee and edible oils.",
+    items: ["Butter", "Ghee", "Milk", "Cheese", "Savoury"],
+  },
+  {
+    img: "/images/banners/savory.jpg",
+    name: "Savory & Snack",
+    desc: "Bold seasonings and savoury flavours for snacks and coatings.",
+    items: ["Barbecue", "Spicy & Chilli", "Cheese", "Seaweed", "Chicken & Beef"],
+  },
+];
+
+const formats = [
+  { name: "Liquid Flavours", desc: "Oil- and water-soluble liquid flavours for easy dosing and blending." },
+  { name: "Powder Flavours", desc: "Spray-dried powders for dry mixes, seasonings and instant products." },
+  { name: "Paste & Emulsion", desc: "Concentrated pastes and emulsions for bakery and dairy applications." },
+];
+---
+
+<Layout path="/products" title="Products & Applications — CA Flavor Sdn Bhd">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Products & Applications</span>
+      <h1 class="page-title" data-reveal>Flavours for every recipe</h1>
+      <p class="page-lead" data-reveal>
+        We formulate liquid, powder and paste flavours across five core applications — and we'll
+        develop a custom profile when you need something unique. Don't see your category? Just ask.
+      </p>
+    </div>
+  </section>
+
+  {applications.map((a, i) => (
+    <section class={`app-row${i % 2 ? " reverse" : ""}`}>
+      <div class="container app-row-grid" data-reveal-group>
+        <div class="app-row-media">
+          <img src={a.img} alt={a.name} loading="lazy" />
+        </div>
+        <div class="app-row-copy">
+          <span class="app-index">0{i + 1}</span>
+          <h2>{a.name}</h2>
+          <p>{a.desc}</p>
+          <ul class="chip-list">
+            {a.items.map((it) => <li>{it}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="formats-sec">
+    <div class="container">
+      <header class="sec-head center" data-reveal>
+        <span class="eyebrow center">Formats</span>
+        <h2 class="section-title">Built to fit your process</h2>
+      </header>
+      <div class="formats-grid" data-reveal-group>
+        {formats.map((f) => (
+          <article class="format-card">
+            <span class="format-rule"></span>
+            <h3>{f.name}</h3>
+            <p>{f.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="oem ribbon">
+    <Wave side="top" />
+    <Wave side="bottom" />
+    <div class="container ribbon-inner">
+      <div class="oem-box" data-reveal>
+        <div class="oem-copy">
+          <h2>Need a custom flavour?</h2>
+          <p>Share your product, target profile and process — our R&amp;D team will develop, sample and scale a flavour built around your brand.</p>
+        </div>
+        <a href="/contact" class="btn btn-primary">Request development
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero { padding: 64px 0 30px; }
+  .page-title { font-size: clamp(2.6rem, 6vw, 4.2rem); margin: 18px 0 18px; letter-spacing: -0.04em; }
+  .page-lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 620px; line-height: 1.65; }
+
+  .app-row { padding: 50px 0 0; }
+  .app-row-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .app-row.reverse .app-row-media { order: 2; }
+  .app-row-media { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+  .app-row-media img { width: 100%; aspect-ratio: 16/10; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.25,1); }
+  .app-row-media:hover img { transform: scale(1.05); }
+  .app-index { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--gold); letter-spacing: .1em; }
+  .app-row-copy h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 8px 0 12px; letter-spacing: -0.03em; }
+  .app-row-copy p { color: var(--ink-soft); font-size: 1.08rem; line-height: 1.6; max-width: 460px; }
+  .chip-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .chip-list li {
+    background: var(--cream); color: var(--red-deep); border: 1px solid var(--line);
+    padding: 8px 16px; border-radius: 999px; font-size: .88rem; font-weight: 600;
+  }
+
+  .formats-sec { padding: 100px 0 0; }
+  .sec-head { margin-bottom: 44px; }
+  .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .format-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px 30px; }
+  .format-rule { display: block; width: 40px; height: 3px; border-radius: 3px; background: var(--red); margin-bottom: 20px; }
+  .format-card h3 { font-size: 1.3rem; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .format-card p { color: var(--ink-soft); line-height: 1.6; }
+
+  .oem-box { display: flex; justify-content: space-between; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .oem-box h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 12px; }
+  .oem-box p { color: rgba(255,255,255,.82); max-width: 520px; }
+  .oem-box .btn { flex-shrink: 0; }
+
+  @media (max-width: 900px) {
+    .app-row-grid { grid-template-columns: 1fr; gap: 28px; }
+    .app-row.reverse .app-row-media { order: 0; }
+    .formats-grid { grid-template-columns: 1fr; }
+  }
+</style>

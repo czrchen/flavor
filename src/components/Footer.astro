@@ -1,0 +1,94 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="brand">
+        <img class="brand-mark" src="/images/logo.png" alt="CA Flavor" width="150" height="50" />
+      </a>
+      <p>A Malaysian flavour manufacturer since 1999 — giving life to foods with consistent, certified flavours for the F&amp;B industry.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/products">Products</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Applications</h4>
+      <a href="/products">Bakery &amp; Confectionery</a>
+      <a href="/products">Beverage &amp; Cordial</a>
+      <a href="/products">Dairy &amp; Oil &amp; Fats</a>
+      <a href="/products">Savoury &amp; Snack</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <p class="muted">No. 13, Jalan BP 4/5, Bandar Bukit Puchong, 47120 Puchong, Selangor, Malaysia</p>
+      <a href="tel:+60380521178">+603-8052 1178 / 1188</a>
+      <a href="mailto:info@flavor.com.my">info@flavor.com.my</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© {year} CA Flavor Sdn Bhd · Co. No. 199901025000 (499900-A)</span>
+    <span>Puchong, Selangor, Malaysia</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    background: var(--ink);
+    color: #C9CBDD;
+    margin-top: 110px;
+    padding: 70px 0 30px;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1.4fr;
+    gap: 40px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 13px; margin-bottom: 18px; background: #fff; padding: 12px 16px; border-radius: 12px; }
+  .brand-mark { height: 44px; width: auto; object-fit: contain; }
+  .footer-brand p { color: #9A9DB5; max-width: 320px; font-size: .95rem; line-height: 1.6; }
+
+  .socials { display: flex; gap: 18px; margin-top: 22px; }
+  .socials a {
+    font-size: .88rem; font-weight: 500; color: #9A9DB5;
+    transition: color .2s ease;
+  }
+  .socials a:hover { color: var(--gold); }
+
+  .footer-col h4 {
+    font-family: var(--font-display); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+    margin-bottom: 18px; color: #6F7290;
+  }
+  .footer-col a { display: block; color: #C9CBDD; padding: 6px 0; font-size: .95rem; transition: color .18s ease; }
+  .footer-col a:hover { color: #fff; }
+  .footer-col .muted { color: #9A9DB5; margin-bottom: 14px; font-size: .95rem; line-height: 1.6; }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    margin-top: 54px; padding-top: 26px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #6F7290; font-size: .86rem;
+  }
+
+  @media (max-width: 860px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
