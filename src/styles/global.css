@@ -4,18 +4,18 @@
    =========================================================== */
 
 :root {
-  /* Brand */
-  --navy:       #14392B;   /* deep forest green (dark sections) */
-  --navy-2:     #1C4D3A;
-  --red:        #0095EB;   /* CA Flavor blue — primary CTA/accent */
-  --red-deep:   #007CC3;
-  --gold:       #8AB003;   /* CA Flavor green — highlight */
+  /* Brand — Lee Kum Kee red + gold family */
+  --navy:       #6E1418;   /* deep maroon (dark sections) */
+  --navy-2:     #8A1A1E;
+  --red:        #D11F2D;   /* LKK red — primary CTA/accent */
+  --red-deep:   #AE1626;
+  --gold:       #CDA34F;   /* warm gold highlight */
 
   /* Surface + text */
-  --ink:        #16202B;   /* near-black blue-grey text */
-  --ink-soft:   #5A6675;
-  --paper:      #FBFCFE;   /* page background */
-  --cream:      #EAF4FB;   /* alt section (soft blue) */
+  --ink:        #241A14;   /* warm near-black text */
+  --ink-soft:   #6B5E50;
+  --paper:      #FCFBF7;   /* warm page background */
+  --cream:      #F6EAD7;   /* warm cream alt section */
   --white:      #FFFFFF;
   --line:       rgba(20, 32, 43, 0.10);
   --line-strong:rgba(20, 32, 43, 0.16);
