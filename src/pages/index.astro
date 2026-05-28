@@ -32,7 +32,7 @@ const quality = [
     <div class="container hero-grid">
       <div class="hero-copy" data-hero-stagger>
         <span class="eyebrow">Flavour Manufacturer · Selangor, Malaysia</span>
-        <h1>Make your food <span class="accent">more flavorful</span>.</h1>
+        <h1 data-split>Make your food more flavorful.</h1>
         <p class="hero-lead">
           CA Flavor gives life to foods. We develop and manufacture consistent, great-tasting
           food flavours for the F&B industry — from bakery and beverages to dairy, oils and
@@ -109,7 +109,7 @@ const quality = [
         <span class="eyebrow">Why CA Flavor</span>
         <h2 class="section-title">A flavour partner you can build on</h2>
         <p class="section-lead">From our facility in Bandar Bukit Puchong, Selangor, we pair state-of-the-art technology with two decades of know-how to deliver flavours that perform — batch after batch.</p>
-        <ul class="quality-list">
+        <ul class="quality-list" data-scrub>
           {quality.map((q) => (
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
@@ -135,23 +135,6 @@ const quality = [
             <div class="cert-plate"><img src={c.img} alt={c.name} loading="lazy" /></div>
           ))}
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA ============ -->
-  <section class="cta ribbon">
-    <Wave side="top" />
-    <Wave side="bottom" />
-    <div class="container ribbon-inner">
-      <div class="cta-box" data-reveal>
-        <div class="cta-copy">
-          <h2>Let's develop your next flavour.</h2>
-          <p>Tell us your product and target profile — our team in Puchong will formulate, sample and scale it with you.</p>
-        </div>
-        <a href="/contact" class="btn btn-primary">Get in touch
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>

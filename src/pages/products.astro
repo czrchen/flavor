@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Wave from "../components/Wave.astro";
 
 const applications = [
   {
@@ -46,7 +45,7 @@ const formats = [
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" data-reveal>Products & Applications</span>
-      <h1 class="page-title" data-reveal>Flavours for every recipe</h1>
+      <h1 class="page-title" data-split>Flavours for every recipe</h1>
       <p class="page-lead" data-reveal>
         We formulate liquid, powder and paste flavours across five core applications — and we'll
         develop a custom profile when you need something unique. Don't see your category? Just ask.
@@ -86,22 +85,6 @@ const formats = [
             <p>{f.desc}</p>
           </article>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="oem ribbon">
-    <Wave side="top" />
-    <Wave side="bottom" />
-    <div class="container ribbon-inner">
-      <div class="oem-box" data-reveal>
-        <div class="oem-copy">
-          <h2>Need a custom flavour?</h2>
-          <p>Share your product, target profile and process — our R&amp;D team will develop, sample and scale a flavour built around your brand.</p>
-        </div>
-        <a href="/contact" class="btn btn-primary">Request development
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
   </section>
